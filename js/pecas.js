@@ -26,4 +26,3 @@ mover(p){
     this.y = p.y;
 }
 }
-
