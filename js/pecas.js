@@ -1,6 +1,20 @@
 class Peca {
+    x;
+    y;
+    cor;
+    forma;
+    ctx;
+    idTipo;
+    spawn() {
+        this.idTipo = this.randomizePeca(Cores.length - 1);
+        this.shape - Formas[this.idTipo];
+        this.color = Cores[this.idTipo];
+        this.x = 0;
+        this.y = 0;
+    }
     constructor(ctx) {
     this.ctx = ctx
+    this.spawn();
     this.color = 'blue';
     this.shape = [
         [2,0,0],
@@ -21,8 +35,15 @@ class Peca {
         })
     })
 }
+setPosicaoInicial() {
+    this.x = this.typeID === 4 ? 4 : 3;
+}
 mover(p){
     this.x = p.x;
     this.y = p.y;
+    this.forma = p.forma;
+}
+randomizePeca(noDeTipos) {
+    return Math.floor(Math.random() * noDeTipos + 1);
 }
 }
